@@ -9,12 +9,16 @@ public class Descanso {
         this.NumeroSemanas = NumeroSemanas;
     }
     public String getStatusGeral() {
-        double valor = HorasDescanso / NumeroSemanas;
-
-        if (valor >= 26) {
-            return "descansado";
-        } else {
+        if (NumeroSemanas == 0 || HorasDescanso == 0) {
             return "cansado";
+        } else {
+            double valor = HorasDescanso / NumeroSemanas;
+
+            if (valor >= 26) {
+                return "descansado";
+            } else {
+                return "cansado";
+            }
         }
     }
 }
