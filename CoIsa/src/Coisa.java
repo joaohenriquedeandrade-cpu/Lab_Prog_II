@@ -6,7 +6,7 @@ public class Coisa {
         System.out.println("-----");
         controlarDisciplina();
         System.out.println("-----");
-        registrarResumos();
+        //registrarResumos();
     }
     public static void registrarDescanso() {
         Descanso descanso = new Descanso();
@@ -57,7 +57,7 @@ public class Coisa {
 
         for (int i = 0; i < meusResumos.conta(); i++) {
             System.out.println(resumos[i]);
-        }
+}
 
 
         System.out.println();
