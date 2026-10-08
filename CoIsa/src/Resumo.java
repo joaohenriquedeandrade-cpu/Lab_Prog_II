@@ -13,4 +13,7 @@ public class Resumo {
     public String getTema() {
         return tema;
     }
+    public String getConteudo() {
+        return conteudo;
+    }
 }

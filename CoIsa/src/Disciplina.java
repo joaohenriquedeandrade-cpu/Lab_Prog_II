@@ -3,7 +3,9 @@ import java.util.*;
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudo;
-    private double[] notas = {0, 0, 0, 0};
+    private int qtdeNotas;
+    private int[] pesos;
+    private double[] notas;
 
     public Disciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
@@ -16,11 +18,14 @@ public class Disciplina {
         this.notas[indice-1] = valorNota;
     }
     public double calculaMedia() {
-        double soma = 0;
+        double numerador = 0;
+        int denominador = 0;
         for(int i = 0; i < notas.length; i++) {
-            soma += notas[i];
+            numerador += notas[i] * pesos[i];
+            denominador += pesos[i];
         }
-        return soma / 4;
+        double media = numerador / denominador;
+        return media;
     }
     public boolean aprovado() {
         if (calculaMedia() >= 7.0) {
@@ -28,6 +33,15 @@ public class Disciplina {
         } else {
             return false;
         }
+    }
+    public Disciplina(int qtdeNotas) {
+        this.qtdeNotas = qtdeNotas;
+    }
+    public Disciplina(String nomeDisciplina, int qtdeNotas, int[] pesos) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.qtdeNotas = qtdeNotas;
+        notas = new double[qtdeNotas];
+        this.pesos = pesos;
     }
     @Override
     public String toString() {

@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.*;
+
 public class RegistroResumos {
     private Resumo[] resumos;
     private int contador = 0;
@@ -11,8 +14,6 @@ public class RegistroResumos {
         resumos[contador] = new Resumo(tema, conteudo);
         if (contador < resumos.length) {
             contador++;
-        } else if (contador > resumos.length) {
-            contador = 0;
         }
     }
     public String[] pegaResumos() {
@@ -44,6 +45,21 @@ public class RegistroResumos {
             }
         return false;
         }
+    public String[] busca(String chaveDeBusca) {
+        String[] ArrayTemp = new String[contador];
+        int acumulador = 0;
+        String chaveMinuscula = chaveDeBusca.toLowerCase();
+
+        for(int i = 0; i < contador; i++) {
+            Resumo novoResumo = resumos[i];
+            if (novoResumo.getConteudo().toLowerCase().contains(chaveMinuscula)) {
+                ArrayTemp[acumulador] = novoResumo.getTema();
+                acumulador++;
+            }
+        }
+        String[] resultado = Arrays.copyOf(ArrayTemp, acumulador);
+        Arrays.sort(resultado);
+
+        return resultado;
     }
-
-
+}
