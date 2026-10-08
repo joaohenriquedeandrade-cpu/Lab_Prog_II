@@ -9,6 +9,9 @@ public class Disciplina {
 
     public Disciplina(String nomeDisciplina) {
         this.nomeDisciplina = nomeDisciplina;
+        this.qtdeNotas = 4;
+        notas = new double[qtdeNotas];
+        pesos = new int[]{1, 1, 1, 1};
     }
 
     public void cadastraHoras(int horasEstudo) {
@@ -35,7 +38,10 @@ public class Disciplina {
         }
     }
     public Disciplina(int qtdeNotas) {
+        this.nomeDisciplina = nomeDisciplina;
         this.qtdeNotas = qtdeNotas;
+        notas = new double[qtdeNotas];
+        pesos = new int[]{1, 1, 1, 1};
     }
     public Disciplina(String nomeDisciplina, int qtdeNotas, int[] pesos) {
         this.nomeDisciplina = nomeDisciplina;
