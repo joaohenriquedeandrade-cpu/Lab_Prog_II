@@ -7,8 +7,8 @@ import java.util.*;
  *
  * @author João Henrique de Andrade
  */
-
 public class Disciplina {
+
     /**
      * Nome da disciplina.
      */
@@ -55,21 +55,22 @@ public class Disciplina {
     public void cadastraHoras(int horasEstudo) {
         this.horasEstudo += horasEstudo;
     }
+
     /**
      * Cadastra uma nota em um determinado índice.
      *
-     * @param indice    o índice da nota (de 1 até a quantidade de notas)
+     * @param indice o índice da nota (de 1 até a quantidade de notas)
      * @param valorNota o valor da nota a ser cadastrada
      */
     public void cadastraNota(int indice, double valorNota) {
         this.notas[indice-1] = valorNota;
     }
+
     /**
      * Calcula e retorna a média ponderada das notas da disciplina.
      *
      * @return a média ponderada das notas
      */
-
     public double calculaMedia() {
         double numerador = 0;
         int denominador = 0;
@@ -80,12 +81,12 @@ public class Disciplina {
         double media = numerador / denominador;
         return media;
     }
+
     /**
      * Verifica se o aluno está aprovado na disciplina com base na média ponderada.
      *
      * @return true se a média for maior ou igual a 7.0, false caso contrário
      */
-
     public boolean aprovado() {
         if (calculaMedia() >= 7.0) {
             return true;
@@ -93,8 +94,10 @@ public class Disciplina {
             return false;
         }
     }
+
     /**
      * Constrói uma disciplina a partir da quantidade de notas.
+     * A quantidade padrão dos pesos iniciais são iguais a 1.
      *
      * @param qtdeNotas a quantidade de notas da disciplina
      */
@@ -104,12 +107,13 @@ public class Disciplina {
         notas = new double[qtdeNotas];
         pesos = new int[]{1, 1, 1, 1};
     }
+
     /**
      * Constrói uma disciplina a partir do seu nome, da quantidade de notas e dos pesos.
      *
      * @param nomeDisciplina o nome da disciplina
-     * @param qtdeNotas      a quantidade de notas da disciplina
-     * @param pesos          os pesos de cada nota
+     * @param qtdeNotas a quantidade de notas da disciplina
+     * @param pesos os pesos de cada nota
      */
     public Disciplina(String nomeDisciplina, int qtdeNotas, int[] pesos) {
         this.nomeDisciplina = nomeDisciplina;
@@ -117,6 +121,13 @@ public class Disciplina {
         notas = new double[qtdeNotas];
         this.pesos = pesos;
     }
+
+    /**
+     * Retorna a String que representa as informações ligadas ao aluno daquela determinada disciplina. A representação
+     * segue o formato “Disciplina  Horas_de_Estudo  Média  Notas_da_Disciplina".
+     *
+     * @return a representação em String com as características acadêmicas do aluno.
+     */
     @Override
     public String toString() {
         String arrayNotas = Arrays.toString(notas);
