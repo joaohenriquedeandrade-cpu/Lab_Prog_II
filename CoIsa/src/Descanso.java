@@ -1,5 +1,6 @@
 /**
- * Representação da rotina de descanso, ele deve descansar 26 horas por semana, ou mais, para se considerar descansado. Considere que o aluno começa cansado.
+ * Representação da rotina de descanso, ele deve descansar 26 horas por semana, ou mais, para se considerar descansado.
+ * Considera-se que o aluno começa cansado.
  *
  * @author João Henrique de Andrade
  */
