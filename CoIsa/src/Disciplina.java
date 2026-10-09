@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * Representação da disciplina cursada por um estudante, responsável por armazenar
  * a quantidade de notas, as notas, os seus respectivos pesos e as horas de estudo
@@ -33,6 +34,33 @@ public class Disciplina {
      * Notas obtidas nas avaliações da disciplina.
      */
     private double[] notas;
+
+    /**
+     * Constrói uma disciplina a partir da quantidade de notas.
+     * A quantidade padrão dos pesos iniciais são iguais a 1.
+     *
+     * @param qtdeNotas a quantidade de notas da disciplina
+     */
+    public Disciplina(int qtdeNotas) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.qtdeNotas = qtdeNotas;
+        notas = new double[qtdeNotas];
+        pesos = new int[]{1, 1, 1, 1};
+    }
+
+    /**
+     * Constrói uma disciplina a partir do seu nome, da quantidade de notas e dos pesos.
+     *
+     * @param nomeDisciplina o nome da disciplina
+     * @param qtdeNotas a quantidade de notas da disciplina
+     * @param pesos os pesos de cada nota
+     */
+    public Disciplina(String nomeDisciplina, int qtdeNotas, int[] pesos) {
+        this.nomeDisciplina = nomeDisciplina;
+        this.qtdeNotas = qtdeNotas;
+        notas = new double[qtdeNotas];
+        this.pesos = pesos;
+    }
 
     /**
      * Constrói uma disciplina a partir do seu nome.
@@ -93,33 +121,6 @@ public class Disciplina {
         } else {
             return false;
         }
-    }
-
-    /**
-     * Constrói uma disciplina a partir da quantidade de notas.
-     * A quantidade padrão dos pesos iniciais são iguais a 1.
-     *
-     * @param qtdeNotas a quantidade de notas da disciplina
-     */
-    public Disciplina(int qtdeNotas) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.qtdeNotas = qtdeNotas;
-        notas = new double[qtdeNotas];
-        pesos = new int[]{1, 1, 1, 1};
-    }
-
-    /**
-     * Constrói uma disciplina a partir do seu nome, da quantidade de notas e dos pesos.
-     *
-     * @param nomeDisciplina o nome da disciplina
-     * @param qtdeNotas a quantidade de notas da disciplina
-     * @param pesos os pesos de cada nota
-     */
-    public Disciplina(String nomeDisciplina, int qtdeNotas, int[] pesos) {
-        this.nomeDisciplina = nomeDisciplina;
-        this.qtdeNotas = qtdeNotas;
-        notas = new double[qtdeNotas];
-        this.pesos = pesos;
     }
 
     /**
